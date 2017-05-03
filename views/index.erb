@@ -81,7 +81,7 @@
 		function newCall(js){
 			var currentdate = new Date();
 			// parse data
-			var results = js.results.whitepages_pro_caller_id.result.results[0];
+			var results = js.results.whitepages_pro_caller_id.result;
 			console.log(results)
 			var lineType = '';
 			var carrier = '';
@@ -94,6 +94,7 @@
 			}
 			else{
 				//parse phone attributes
+
 				lineType = nvl(results[0]['line_type'],'unknown line type');
 				carrier = nvl(results[0]['carrier'],'unknown carrier');
 				//parse name
