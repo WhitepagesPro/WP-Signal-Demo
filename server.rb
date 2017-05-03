@@ -60,6 +60,7 @@ post '/inbound' do
 				# Should be your Twilio Number or a verified Caller ID
 				r.Dial :callerId => from do |d|
 						d.Client default_client
+				r.Dial :timeout => 1
 				end
 		end
 		response.text
