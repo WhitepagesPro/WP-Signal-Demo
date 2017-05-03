@@ -65,7 +65,7 @@
 				return bar;
 			return foo;
 		}
-		function newCallWrapperForLocalTesting(){
+		 /* function newCallWrapperForLocalTesting(){
 			//copypasted from https://preview.twilio.com/Sync/Services/IS29396a29519d9672cb5e6e008d33ba0a/Documents; see Trevor or Chris for creds
 			var newJS = sampleJS[callIndex];
 			callIndex += 1;
@@ -73,6 +73,7 @@
 				callIndex = 0;
 			newCall(newJS);
 		}
+		*/
 		function newCall(js){
 			var currentdate = new Date();
 			eval('var newData = '+js);
