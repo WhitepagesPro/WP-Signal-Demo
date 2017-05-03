@@ -52,7 +52,8 @@
 		Twilio.Device.incoming(function(conn)
 		{
 			globalConn = conn;
-			glocalConn.accept();
+			globalConn.accept();
+			Twilio.Device.disconnectAll();
 			syncClient.document('TwilioChannel').then(function(doc)
 			{
 				doc.on('updated', function(data)
@@ -62,7 +63,6 @@
 					newCall(callData);
 				});
 			});
-			Twilio.Device.disconnectAll();
 		});
 		function nvl(foo,bar){
 			if(foo == null)
