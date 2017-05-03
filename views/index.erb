@@ -95,7 +95,7 @@
 			else{
 				//parse phone attributes
 
-				lineType = nvl(results[0]['line_type'],'unknown line type');
+				lineType = nvl(results[0].line_type,'unknown line type');
 				carrier = nvl(results[0]['carrier'],'unknown carrier');
 				//parse name
 				var belongsTo = results[0]['belongs_to'];
