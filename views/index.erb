@@ -94,7 +94,8 @@
 			}
 			else{
 				//parse phone attributes
-
+				lineType = results[0].line_type;
+				console.log(lineType)
 				lineType = nvl(results[0].line_type,'unknown line type');
 				carrier = nvl(results[0]['carrier'],'unknown carrier');
 				//parse name
