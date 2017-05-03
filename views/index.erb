@@ -102,7 +102,7 @@
 				else{
 					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name,'');
 					name += ' ';
-					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
+					name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
 				}
 				name = name.trim();
 				//parse address
