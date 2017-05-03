@@ -15,7 +15,7 @@
 		<script
 			src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 		<script type='text/javascript'>
-		var callData = [];
+		var data;
 		var map;
 		var markers = [];
 		var infoWindows = [];
@@ -39,7 +39,7 @@
 				{
 					syncDoc = doc;
 					callData = syncDoc.get();
-					newCall(callData);
+					newCall(data);
 				});
 			});
 		});
@@ -60,7 +60,7 @@
 				{
 					syncDoc = doc;
 					callData = syncDoc.get();
-					newCall(callData);
+					newCall(data);
 				});
 			});
 		});
