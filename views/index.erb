@@ -80,9 +80,8 @@
 		*/
 		function newCall(js){
 			var currentdate = new Date();
-			eval('var newData = '+js);
 			// parse data
-			var results = newData['results']['whitepages_pro_caller_id']['result']['results'];
+			var results = js.results.whitepages_pro_caller_id.result.results[0];
 			var lineType = '';
 			var carrier = '';
 			var name = '';
