@@ -49,19 +49,14 @@ end
 #this will be called from a Twilio voice URL
 #for inbound calls, dial the default_client
 post '/inbound' do
-		from = params[:From]
-		addOnData = params[:AddOns]
-		client = Twilio::REST::Client.new(account_sid, auth_token)
-		# Sending the add on data through Twilio Sync
-		service = client.preview.sync.services(sync_sid)
-		service.documents("TwilioChannel").update(data: addOnData)
-		# Dials the default_client
-		response = Twilio::TwiML::Response.new do |r|
-				# Should be your Twilio Number or a verified Caller ID
-				r.Dial :callerId => from do |d|
-						d.Client default_client
-				r.Dial :timeout => 1
-				end
-		end
-		response.text
+	addOnData = params[:AddOns]
+	client = Twilio::REST::Client.new(account_sid, auth_token)
+	# Sending the add on data through Twilio Sync
+	service = client.preview.sync.services(sync_sid)
+	service.documents("TwilioChannel").update(data: addOnData)
+	# Dials the default_client
+	Twilio::TwiML::Response.new do |r|
+	# Should be your Twilio Number or a verified Caller ID
+		r.Say 'Your pin will appear shortly!', voice: 'alice'
+	end.text
 end
