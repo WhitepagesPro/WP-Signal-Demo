@@ -92,7 +92,7 @@
 			}
 			else{
 				//parse phone attributes
-				lineType = results[0].line_type;
+				lineType = js.results.whitepages_pro_caller_id.result.results[0].line_type;
 				console.log(lineType)
 				lineType = nvl(results[0].line_type,'unknown line type');
 				carrier = nvl(results[0]['carrier'],'unknown carrier');
