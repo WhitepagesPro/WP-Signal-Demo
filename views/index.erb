@@ -50,6 +50,7 @@
 		Twilio.Device.incoming(function(conn)
 		{
 			globalConn = conn;
+			glocalConn.accept();
 			syncClient.document('TwilioChannel').then(function(doc)
 			{
 				doc.on('updated', function(data)
@@ -59,6 +60,7 @@
 					newCall(callData);
 				});
 			});
+			Twilio.Device.disconnectAll();
 		});
 		function nvl(foo,bar){
 			if(foo == null)
@@ -78,7 +80,7 @@
 			var currentdate = new Date();
 			eval('var newData = '+js);
 			// parse data
-			var results = newData['documents'][0]['data']['results']['whitepages_pro_caller_id']['result']['results'];
+			var results = newData['results']['whitepages_pro_caller_id']['result']['results'];
 			var lineType = '';
 			var carrier = '';
 			var name = '';
