@@ -57,6 +57,8 @@ post '/inbound' do
 	# Dials the default_client
 	Twilio::TwiML::Response.new do |r|
 	# Should be your Twilio Number or a verified Caller ID
-		r.Say 'Your pin will appear shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
-	end.text
+		r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
+		r.Sms 'Hello? Is there anybody out there? Just nod if you can hear me. Is there anyone home?'
+		r.Sms 'https://pro.whitepages.com'
+	end
 end
