@@ -83,14 +83,14 @@
 			}
 			else{
 				//parse phone attributes
-				lineType = nvl(js.results.whitepages_pro_caller_id.result.results[0].line_type, 'Unknown Line Type');
+				// lineType = nvl(js.results.whitepages_pro_caller_id.result.results[0].line_type, 'Unknown Line Type');
 				carrier = nvl(js.results.whitepages_pro_caller_id.result.results[0].carrier,'Unknown Carrier');
 				//parse name
 				var belongsTo = js.results.whitepages_pro_caller_id.result.results[0];
 				if(belongsTo.length == 0)
 					name = 'Unknown Caller';
 				else{
-					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name,'');
+					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name[0],'');
 					name += ' ';
 					name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
 				}
@@ -100,15 +100,15 @@
 				if(locs.length == 0)
 					address = 'Unknown Location';
 				else{
-					address = nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].standard_address_line1,'');
+					// address = nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].standard_address_line1,'');
 					address += ' ';
 					address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].city,'');
 					address += ', ';
 					address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].state_code,'');
 					address += ' ';
-					address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].postal_code,'');
+					// address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].postal_code,'');
 					address += ' ';
-					address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].country_code,'');
+					// address += nvl(js.results.whitepages_pro_caller_id.result.results[0].associated_locations[0].country_code,'');
 					address = address.trim();
 					if(address[0] == ',')
 						address = address.substring(1).trim();
@@ -146,7 +146,6 @@
 		</script>
 	</head>
 	<body>
-		<input type='button' value='receive new call' onclick='newCallWrapperForLocalTesting()'/>
 		<div id='calllog'></div>
 		<div id='callmap' style="width: 1400px; height: 800px;"></div>
 	</body>
