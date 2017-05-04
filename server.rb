@@ -60,5 +60,5 @@ post '/inbound' do
 		r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
 		r.Sms 'Hello? Is there anybody out there? Just nod if you can hear me. Is there anyone home?'
 		r.Sms 'https://pro.whitepages.com'
-	end
+	end.text
 end
