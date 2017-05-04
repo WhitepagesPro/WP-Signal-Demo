@@ -117,7 +117,7 @@
 				}
 			}
 			//build label text
-			var newCallLogLabel = carrier+' '+lineType+'<br>'+name+'<br>'+address;
+			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier+' '+lineType;
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
 			var newMarker = new google.maps.Marker({position: latLon, map: map});
