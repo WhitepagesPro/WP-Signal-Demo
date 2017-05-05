@@ -15,6 +15,7 @@
 		<script
 			src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 		<script type='text/javascript'>
+
 		var data;
 		var map;
 		var markers = [];
@@ -23,6 +24,10 @@
 		var accessManager;
 		var syncClient;
 		var syncDoc;
+		var centerPoint = {lat: 38, lng: -96};
+		var westPoint = {lat: 38, lng: -96}
+		var sfPoint = {lat: 38, lng: -96}
+
 		// Get an access token for the client by passing a device ID.
 		$.getJSON('token',
 		{
@@ -62,11 +67,13 @@
 				});
 			});
 		});
+
 		function nvl(foo,bar){
 			if(foo == null)
 				return bar;
 			return foo;
 		}
+
 		function newCall(js){
 			var currentdate = new Date();
 			// parse data
@@ -135,17 +142,37 @@
 				m.setMap(null);
 			}
 		}
+
 		function initMap(){
-			var centerPoint = {lat: 38, lng: -96};
 			map = new google.maps.Map(document.getElementById('callmap'), {
 						zoom: 5,
 						center: centerPoint,
 						mapTypeId: 'terrain'
 					});
 		}
+
+		function zoomResetUs()
+		{
+			map.setCenter(centerPoint);
+		}
+
+		function zoomresetWest()
+		{
+			map.setCenter(westPoint)
+		}
+
+		function zoomResetSf()
+		{
+			map.setCenter(sfPoint)
+		}
+
 		</script>
 	</head>
 	<body>
+		<input type='button' value='Pin' onclick='addFixturePins()'
+		<input type='button' value='Reset Zoom: US' onclick ='zoomResetUs()'/>
+		<input type='button' value='Reset Zoom: West' onlick='zoomResetWest()'/>
+		<input type='button' value='Reset Zoom: SF' onlick='zoomResetSf()'/>
 		<div id='calllog'></div>
 		<div id='callmap' style="width: 1400px; height: 800px;"></div>
 	</body>
