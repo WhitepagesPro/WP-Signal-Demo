@@ -156,7 +156,7 @@
 		function initMap(){
 			map = new google.maps.Map(document.getElementById('callmap'), {
 						zoom: 5,
-						center: westPoint,
+						center: centerPoint,
 						mapTypeId: 'terrain'
 					});
 		}
@@ -164,6 +164,7 @@
 		function zoomResetUs()
 		{
 			map.setCenter(centerPoint);
+			map.setZoom(5);
 		}
 
 		function zoomResetWest()
@@ -181,8 +182,8 @@
 	<body>
 		<input type='button' value='Pin' onclick='addFixturePins()'/>
 		<input type='button' value='Reset Zoom: US' onclick ='zoomResetUs()'/>
-		<input type='button' value='Reset Zoom: West' onlick='zoomResetWest()'/>
-		<input type='button' value='Reset Zoom: SF' onlick='zoomResetSf()'/>
+		<input type='button' value='Reset Zoom: West' onclick='zoomResetWest()'/>
+		<input type='button' value='Reset Zoom: SF' onclick='zoomResetSf()'/>
 		<div id='calllog'></div>
 		<div id='callmap' style="width: 1400px; height: 800px;"></div>
 	</body>
