@@ -26,8 +26,8 @@
 		var syncDoc;
 		var zDex;
 		var centerPoint = {lat: 38, lng: -96};
-		var westPoint = {lat: 38, lng: -150};
-		var sfPoint = {lat: 38, lng: -122};
+		var westPoint = {lat: 38, lng: -122};
+		var sfPoint = {lat: 37.5, lng: -122};
 
 		// Get an access token for the client by passing a device ID.
 		$.getJSON('token',
@@ -170,13 +170,13 @@
 		function zoomResetWest()
 		{
 			map.setCenter(westPoint);
-			map.setZoom(7);
+			map.setZoom(6);
 		}
 
 		function zoomResetSf()
 		{
 			map.setCenter(sfPoint);
-			map.setZoom(10);
+			map.setZoom(9);
 		}
 
 		</script>
