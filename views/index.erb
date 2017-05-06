@@ -128,15 +128,9 @@
 			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier+' '+lineType;
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
-			if (makers[0] != null)
-				zDex = markers[markers.length-1].getZIndex() + 1;
-			else {
-				zDex = 1;
-			}
 			var newMarker = new google.maps.Marker({
 				position: latLon,
 				map: map,
-				zIndex: zDex
 			});
 			var infowindow = new google.maps.InfoWindow({
 				content: newCallLogLabel
