@@ -116,6 +116,8 @@
 				carrier = nvl(js.results.whitepages_pro_caller_id.result.results[0].carrier,'Unknown Carrier');
 				//parse name
 				var belongsTo = js.results.whitepages_pro_caller_id.result.results[0];
+				console.log(belongsTo);
+				console.log(belongsTo.length);
 				if(belongsTo.length == 0)
 					name = 'Unknown Caller';
 				else{
@@ -124,6 +126,7 @@
 					name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
 				}
 				name = name.trim();
+				console.log(name);
 				//parse address
 				var locs = js.results.whitepages_pro_caller_id.result.results[0].associated_locations;
 				if(locs.length == 0)
@@ -147,10 +150,12 @@
 			}
 			//build label text
 			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier+' '+lineType;
+			console.log(newCallingLogLabel);
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
 			var newMarker = new google.maps.Marker({ position: latLon, map: map });
 			var infowindow = new google.maps.InfoWindow({ content: newCallLogLabel });
+			console.log(latLon);
 			markers.unshift(newMarker);
 			infoWindows.unshift(infowindow);
 			infowindow.open(map, newMarker);
