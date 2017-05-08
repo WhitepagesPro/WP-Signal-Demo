@@ -146,12 +146,16 @@
 			infoWindows.unshift(infowindow);
 			infowindow.open(map, newMarker);
 			// Zoom to fit the new markers
-			var newBoundary = new google.maps.LatLngBounds();
-			for (index in markers){
-				var position = markers[index].position;
-				newBoundary.extend(position);
+			if (markers.length > 1)
+			{
+				var newBoundary = new google.maps.LatLngBounds();
+				for (index in markers){
+					var position = markers[index].position;
+					newBoundary.extend(position);
+				}
+				map.fitBounds(newBoundary);
 			}
-			map.fitBounds(newBoundary);
+
 			//keep no more than 5 markers / infowindows
 			if(markers.length > 5){
 				var i = infoWindows.pop();
