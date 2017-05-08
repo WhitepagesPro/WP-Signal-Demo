@@ -107,6 +107,7 @@
 			var address = '';
 			var lat = 0;
 			var lon = 0;
+			var newCallLogLabel = '';
 			if(results.length == 0){
 				newCallLogLabel = 'Error occurred retreiving call details';
 			}
@@ -150,7 +151,7 @@
 			}
 			//build label text
 			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier+' '+lineType;
-			console.log(newCallingLogLabel);
+			console.log(newCallLogLabel);
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
 			var newMarker = new google.maps.Marker({ position: latLon, map: map });
