@@ -107,15 +107,15 @@
 				// lineType = nvl(js.results.whitepages_pro_caller_id.result.results[0].line_type, 'Unknown Line Type');
 				carrier = nvl(js.results.whitepages_pro_caller_id.result.results[0].carrier,'Unknown Carrier');
 				//parse name
-				var belongsTo = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0],'');
-				console.log(belongsTo);
-				console.log(belongsTo.length());
-				if(belongsTo.length == 0)
-					name = 'Unknown Caller';
-				else{
+				if (js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0])
+				{
 					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name[0],'');
 					name += ' ';
 					name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
+				}
+				else
+				{
+						name = 'Unknown Caller';
 				}
 				name = name.trim();
 				console.log(name);
