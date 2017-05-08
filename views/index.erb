@@ -109,7 +109,7 @@
 				//parse name
 				var belongsTo = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0],'');
 				console.log(belongsTo);
-				console.log(belongsTo.length);
+				console.log(belongsTo.length());
 				if(belongsTo.length == 0)
 					name = 'Unknown Caller';
 				else{
