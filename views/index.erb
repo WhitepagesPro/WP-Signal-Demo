@@ -71,15 +71,6 @@
 				});
 			});
 		});
-		syncClient.document('TwilioChannel').then(function(doc)
-		{
-			doc.on('updated', function(data)
-			{
-				syncDoc = doc;
-				callData = syncDoc.get();
-				newCall(data);
-			});
-		});
 
 		function newCallWrapperForLocalTesting(){
 			//copypasted from https://preview.twilio.com/Sync/Services/IS29396a29519d9672cb5e6e008d33ba0a/Documents; see Trevor or Chris for creds
