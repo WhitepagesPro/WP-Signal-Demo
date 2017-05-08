@@ -107,7 +107,7 @@
 				// lineType = nvl(js.results.whitepages_pro_caller_id.result.results[0].line_type, 'Unknown Line Type');
 				carrier = nvl(js.results.whitepages_pro_caller_id.result.results[0].carrier,'Unknown Carrier');
 				//parse name
-				var belongsTo = js.results.whitepages_pro_caller_id.result.results[0];
+				var belongsTo = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0];
 				console.log(belongsTo);
 				console.log(belongsTo.length);
 				if(belongsTo.length == 0)
