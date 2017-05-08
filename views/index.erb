@@ -109,13 +109,20 @@
 				//parse name
 				if (js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0])
 				{
-					name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name[0],'');
-					name += ' ';
-					name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
+					if !(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].name)
+					{
+						name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].first_name[0],'');
+						name += ' ';
+						name += nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].names[0].last_name,'Unknown Caller');
+					}
+					else
+					{
+						name = nvl(js.results.whitepages_pro_caller_id.result.results[0].belongs_to[0].name,'Unknown Caller')
+					}
 				}
 				else
 				{
-						name = 'Unknown Caller';
+					name = 'Unknown Caller';
 				}
 				name = name.trim();
 				console.log(name);
