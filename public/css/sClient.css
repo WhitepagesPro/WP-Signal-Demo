@@ -5,7 +5,7 @@ body {
 	background: url() top center no-repeat, url(https://static0.twilio.com/bundles/quickstart/whitey.png) center top repeat;
 }
 
-#callmap
+#frame
 {
 	border-style: solid;
 	border-color: #4F4F4F;
