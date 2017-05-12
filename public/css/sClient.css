@@ -11,12 +11,6 @@ body {
 	width: 1400px;
 	border-style: solid;
 	border-color: #4F4F4F;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
 }
 
 .phone
@@ -31,7 +25,9 @@ body {
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
-	border-radius: 25px, 25px, 25px, 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px 25px 25px 25px;
 	margin: 22px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
@@ -43,7 +39,9 @@ body {
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
-	border-radius: 25px, 25px, 25px, 25px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 25px 25px 25px 25px;
 	margin: 22px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
