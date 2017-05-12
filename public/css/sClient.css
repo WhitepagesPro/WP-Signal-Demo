@@ -7,8 +7,13 @@ body {
 
 #frame
 {
+	position: relative;
+	height: 100%;
+	width: 100%;
 	border-style: solid;
 	border-color: #4F4F4F;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	border-radius: 10px, 10px, 10px, 10px
 }
 
