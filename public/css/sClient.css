@@ -13,7 +13,10 @@ body {
 	border-color: #4F4F4F;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
-	border-radius: 10px, 10px, 10px, 10px
+	box-sizing:border-box;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
 }
 
 .phone
