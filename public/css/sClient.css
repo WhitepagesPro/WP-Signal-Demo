@@ -10,7 +10,7 @@ body {
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
-	padding: 22px
+	margin: 22px
 }
 
 .coolButton
@@ -19,7 +19,7 @@ body {
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
-	padding: 22px
+	margin: 22px
 }
 
 .hotMap
