@@ -11,6 +11,7 @@ body {
 	width: 1400px;
 	border-style: solid;
 	border-color: #4F4F4F;
+	vertical-align:middle;
 }
 
 .phone
