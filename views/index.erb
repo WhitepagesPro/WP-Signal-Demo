@@ -91,7 +91,8 @@
 			return foo;
 		}
 
-		function newCall(js){
+		function newCall(js)
+		{
 			var currentdate = new Date();
 			// parse data
 			var results = {};
@@ -173,7 +174,8 @@
 			}
 
 			//keep no more than 5 markers / infowindows
-			if(markers.length > 25){
+			if(markers.length > 25)
+			{
 				var i = infoWindows.pop();
 				var m = markers.pop();
 				i.close();
@@ -181,7 +183,8 @@
 			}
 		}
 
-		function initMap(){
+		function initMap()
+		{
 			map = new google.maps.Map(document.getElementById('callmap'), {
 						zoom: 5,
 						center: centerPoint,
@@ -213,16 +216,16 @@
 		<div class = 'phone'>
 			<h3>(206) 202-2340</h3>
 		</div>
-		<div class = "wLogos">
-			<a href="http://pro.whitepages.com/developer/"> <img src = "//pro.whitepages.com/wp-content/uploads/2014/09/wp-logo-large.png"> </img> </a>
+		<div class = 'wLogos'>
+			<a href = "http://pro.whitepages.com/developer/"> <img src = "//pro.whitepages.com/wp-content/uploads/2014/09/wp-logo-large.png"> </img>  </a>
 		</div>
-		<div id='callmap' class = 'hotMap' ></div>
-		<input type='button' class = 'coolButton' value='Pin' onclick='newCallWrapperForLocalTesting()'/>
-		<input type='button' class = 'hotButton' value='Reset Zoom: US' onclick ='zoomResetUs()'/>
-		<input type='button' class = 'hotButton' value='Reset Zoom: West' onclick='zoomResetWest()'/>
-		<input type='button' class = 'hotButton' value='Reset Zoom: SF' onclick='zoomResetSf()'/>
-		<div class="tLogos">
-			<a href="https://www.twilio.com"><img src="images/twilio-logo-2100x650.png"></img></a>
+		<div id = 'callmap' class = 'hotMap' ></div>
+		<input type ='button' class = 'coolButton' value ='Pin' onclick = 'newCallWrapperForLocalTesting()'/>
+		<input type ='button' class = 'hotButton' value ='Reset Zoom: US' onclick ='zoomResetUs()'/>
+		<input type ='button' class = 'hotButton' value ='Reset Zoom: West' onclick ='zoomResetWest()'/>
+		<input type ='button' class = 'hotButton' value ='Reset Zoom: SF' onclick ='zoomResetSf()'/>
+		<div class = 'tLogos'>
+			<a href = "https://www.twilio.com"> <img src = "images/twilio-logo-2100x650.png"> </img> </a>
 		</div>
 	</body>
 </html>
