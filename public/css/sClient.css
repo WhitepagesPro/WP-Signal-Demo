@@ -22,7 +22,9 @@ body {
 
 .hotButton
 {
-	color: #ffffff;
+	height: 20px;
+	width: 25px;
+	color: #4F4F4F;
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
@@ -36,14 +38,14 @@ body {
 
 .coolButton
 {
-	color: #ffffff;
+	color: #4F4F4F;
 	background: #3D90C9;
 	font-weight: bold;
 	border: 1px solid #ffffff;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 25px 25px 25px 25px;
-	margin: 22px;
+
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 }
