@@ -16,8 +16,19 @@ body {
 
 .hotMap
 {
-	width: 1400px; height: 800px;
-	
+	position: relative;
+	padding-bottom: 75%;
+	height: 0;
+	overflow: hidden;
+	/* margin: 0 auto 0 auto; */
+}
+.hotMap iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .logos
