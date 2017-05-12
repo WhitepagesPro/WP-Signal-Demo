@@ -7,8 +7,8 @@ body {
 
 #frame
 {
-	height: 800px;
-	width: 1400px;
+	width: 1400px; height: 800px; 
+	margin: 0 auto 0 auto;
 	border-style: solid;
 	border-color: #4F4F4F;
 	vertical-align:middle;
@@ -28,7 +28,7 @@ body {
 	border: 1px solid #4F4F4F;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
-	border-radius: 25px 25px 25px 25px;
+	border-radius: 20px 20px 20px 20px;
 	margin: 22px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
