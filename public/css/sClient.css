@@ -17,7 +17,7 @@ body {
 .hotMap
 {
 	width: 1400px; height: 800px;
-
+	margin: 0 auto 0 auto;
 }
 
 .logos
