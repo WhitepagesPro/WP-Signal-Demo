@@ -7,7 +7,7 @@ body {
 
 #frame
 {
-	width: 1400px; height: 800px; 
+	width: 1400px; height: 800px;
 	margin: 0 auto 0 auto;
 	border-style: solid;
 	border-color: #4F4F4F;
@@ -17,17 +17,19 @@ body {
 .phone
 {
 	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 .hotButton
 {
+	padding-left: 10px;
+	padding-right: 10px;
 	color: #ffffff;
 	background: #3D90C9;
-	font-weight: bold;
-	border: 1px solid #4F4F4F;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
+	/*font-weight: bold;*/
+	border: 5px solid #4F4F4F;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
 	border-radius: 20px 20px 20px 20px;
 	margin: 22px;
 	font-family: 'Roboto', sans-serif;
