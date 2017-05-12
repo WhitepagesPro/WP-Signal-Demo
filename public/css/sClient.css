@@ -6,12 +6,18 @@ body {
 
 .hotButton
 {
-
+	color: #939597;
+	background: #3D90C9;
+	font-weight: bold;
+	border: 1px solid #939597;
 }
 
 .coolButton
 {
-
+	color: #939597;
+	background: #3D90C9;
+	font-weight: bold;
+	border: 1px solid #939597;
 }
 
 .hotMap
