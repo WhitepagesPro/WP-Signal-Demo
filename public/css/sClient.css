@@ -39,18 +39,8 @@ body {
 	margin: 0 auto 0 auto;
 }
 
-.wLogos
+.logos
 {
-	text-align: center;
-	margin: 10px;
-	width: auto;
-	height: auto;
-}
-
-.tLogos
-{
-	text-align: center;
-	margin: 10px;
-	width: 100px;
-	height: 100px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
