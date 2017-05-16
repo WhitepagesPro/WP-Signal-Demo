@@ -46,7 +46,7 @@
 
 		function addMarkerWithTimeout(position, label, timeout){
 			window.setTimeout(function(){
-				var icon = {url: 'images/pin.png', size: new google.maps.Size(15, 15)};
+				var icon = {url: 'images/pin.png', size: new google.maps.Size(50, 50)};
 				var newMarker = new google.maps.Marker({ position: position, map: map, icon: icon, animation: google.maps.Animation.DROP});
 				var infowindow = new google.maps.InfoWindow({ content: label });
 				markers.unshift(newMarker);
