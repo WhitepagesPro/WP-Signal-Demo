@@ -50,8 +50,10 @@
 				var newMarker = new google.maps.Marker({ position: position, map: map, icon: icon, animation: google.maps.Animation.DROP});
 				var infowindow = new google.maps.InfoWindow({ content: label });
 				markers.unshift(newMarker);
+				window.setTimeout(function(){
 				infoWindows.unshift(infowindow);
 				infowindow.open(map, newMarker);
+			), 100};
 			}, timeout);
 		}
 
