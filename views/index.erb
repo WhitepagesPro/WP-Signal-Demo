@@ -174,7 +174,7 @@
 			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier+' '+lineType;
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
-			var time = makers.length * 200;
+			var time = markers.length * 200;
 			// var icon = {url: 'images/pin.png', scaledSize: new google.maps.scaledSize(50, 50)};
 			addMarkerWithTimeout(latLon, newCallLogLabel, time);
 			// Zoom to fit the new markers
