@@ -17,6 +17,13 @@ body {
 .phone
 {
 	font-family: 'Roboto', sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.prize
+{
+	font-family: 'Roboto', sans-serif;
 	font-size: 30px;
 	font-weight: bold;
 }
