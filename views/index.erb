@@ -156,8 +156,8 @@
 			console.log(newCallLogLabel);
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
-			var icon = {url: 'images/pin.png', scaledSize: new google.maps.scaledSize(50, 50)};
-			var newMarker = new google.maps.Marker({ position: latLon, map: map, icon: icon });
+			// var icon = {url: 'images/pin.png', scaledSize: new google.maps.scaledSize(50, 50)};
+			var newMarker = new google.maps.Marker({ position: latLon, map: map });
 			var infowindow = new google.maps.InfoWindow({ content: newCallLogLabel });
 			console.log(latLon);
 			markers.unshift(newMarker);
