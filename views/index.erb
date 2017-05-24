@@ -32,8 +32,6 @@
 		var westPoint = {lat: 43.8, lng: -122};
 		var sfPoint = {lat: 37.8, lng: -122};
 
-		console.log('Almost done, hang in there!');
-
 		function initMap()
 		{
 			map = new google.maps.Map(document.getElementById('callmap'), {
@@ -201,6 +199,10 @@
 				m.setMap(null);
 			}
 			// Find winner
+			if (marker.length == 1)
+			{
+				console.log('Almost done, hang in there!')
+			}
 			if (markers.length >= 4 && markers.length <= 9)
 			{
 				console.log(markers.length + 1);
