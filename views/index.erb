@@ -153,12 +153,6 @@
 					name = 'Unknown Caller';
 				}
 				name = name.trim();
-				if (markers.length >= 1 && markers.length <= 10)
-				{
-					console.log(makers.length);
-					console.log(name);
-					console.log(phone);
-				}
 				//parse address
 				var locs = js.results.whitepages_pro_caller_id.result.results[0].associated_locations;
 				if(locs.length == 0)
@@ -204,6 +198,13 @@
 				var m = markers.pop();
 				i.close();
 				m.setMap(null);
+			}
+			// FInd Winner
+			if (markers.length >= 1 && markers.length <= 10)
+			{
+				console.log(markers.length);
+				console.log(name);
+				console.log(phone);
 			}
 		}
 
