@@ -58,6 +58,6 @@ post '/inbound' do
 	Twilio::TwiML::Response.new do |r|
 	# Should be your Twilio Number or a verified Caller ID
 		r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
-		r.Sms 'Thank you for joining our session at Twilio SIGNAL! Sign up for your free data test here: http://bit.ly/2qPPqAa'
+		r.Sms 'Thank you for joining our session at Twilio SIGNAL! Sign up for your free data analysis here: http://bit.ly/wpsignal'
 	end.text
 end
