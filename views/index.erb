@@ -247,7 +247,7 @@
 			}else{
 
 				//parse phone attributes
-				lineType = nvl(results[0]['line_type'],'unknown line type');
+				//lineType = nvl(results[0]['line_type'],'unknown line type');
 				carrier = nvl(results[0]['carrier'],'unknown carrier');
 
 				//parse name
@@ -255,7 +255,7 @@
 				if(belongsTo.length == 0)
 					name = 'Unknown Caller';
 				else{
-					name = nvl(belongsTo[0]['names'][0]['first_name'],'');
+					name = nvl(belongsTo[0]['names'][0]['first_name'][0],'');
 					name += ' ';
 					name += nvl(belongsTo[0]['names'][0]['last_name'],'Unknown Caller');
 				}
@@ -266,15 +266,9 @@
 				if(locs.length == 0)
 					address = 'Unknown Location';
 				else{
-					address = nvl(locs[0]['standard_address_line_1'],'');
-					address += ' ';
 					address += nvl(locs[0]['city'],'');
 					address += ', ';
 					address += nvl(locs[0]['state_code'],'');
-					address += ' ';
-					address += nvl(locs[0]['postal_code'],'');
-					address += ' ';
-					address += nvl(locs[0]['country_code'],'');
 					address = address.trim();
 					if(address[0] == ',')
 						address = address.substring(1).trim();
@@ -283,27 +277,12 @@
 				}
 			}
 			//build label text
-			var newCallLogLabel = carrier+' '+lineType+'<br>'+name+'<br>'+address;
-
+			var newCallLogLabel = name+'<br>'+address+'<br>'+carrier;
 			//add marker and infowindow
 			var latLon = {lat: lat, lng: lon};
-			var newMarker = new google.maps.Marker({position: latLon, map: map});
-
-			var infowindow = new google.maps.InfoWindow({
-				content: newCallLogLabel
-			});
-
-			markers.unshift(newMarker);
-			infoWindows.unshift(infowindow);
-			infowindow.open(map, newMarker);
-
-			//keep no more than 5 markers / infowindows
-			if(markers.length > 5){
-				var i = infoWindows.pop();
-				var m = markers.pop();
-				i.close();
-				m.setMap(null);
-			}
+			// Get time
+			var time = markers.length * 200;
+			addMarkerWithTimeout(latLon, newCallLogLabel, time);
 		}
 
 		</script>
