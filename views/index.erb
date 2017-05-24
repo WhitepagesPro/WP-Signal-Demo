@@ -191,7 +191,7 @@
 				map.fitBounds(newBoundary);
 			}
 
-			//keep no more than 5 markers / infowindows
+			//keep no more than 25 markers / infowindows
 			if(markers.length > 25)
 			{
 				var i = infoWindows.pop();
@@ -199,10 +199,10 @@
 				i.close();
 				m.setMap(null);
 			}
-			// FInd Winner
+			// Find winner
+			console.log(markers.length);
 			if (markers.length >= 1 && markers.length <= 10)
 			{
-				console.log(markers.length);
 				console.log(name);
 				console.log(phone);
 			}
