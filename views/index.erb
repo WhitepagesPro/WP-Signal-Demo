@@ -32,6 +32,8 @@
 		var westPoint = {lat: 43.8, lng: -122};
 		var sfPoint = {lat: 37.8, lng: -122};
 
+		console.log('Almost done, hang in there!');
+
 		function initMap()
 		{
 			map = new google.maps.Map(document.getElementById('callmap'), {
@@ -191,7 +193,7 @@
 			}
 
 			//keep no more than 25 markers / infowindows
-			if(markers.length > 25)
+			if(markers.length > 50)
 			{
 				var i = infoWindows.pop();
 				var m = markers.pop();
@@ -199,9 +201,9 @@
 				m.setMap(null);
 			}
 			// Find winner
-			console.log(markers.length + 1);
 			if (markers.length >= 4 && markers.length <= 9)
 			{
+				console.log(markers.length + 1);
 				console.log(name);
 				console.log(phone);
 			}
