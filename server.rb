@@ -50,7 +50,7 @@ end
 #for inbound calls, dial the default_client
 post '/inbound' do
   addOnData = params[:AddOns]
-  puts addOnData 
+  puts addOnData
   client = Twilio::REST::Client.new(account_sid, auth_token)
   # Sending the add on data through Twilio Sync
   service = client.preview.sync.services(sync_sid)
@@ -61,4 +61,9 @@ post '/inbound' do
     r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
     r.Sms 'Thank you for joining our session at Twilio SIGNAL! Sign up for your free data analysis here: http://bit.ly/wpsignal'
   end.text
+end
+
+post '/sms' do
+  addOnDataSMS = params[:AddOns]
+  puts addOnDataSMS
 end
