@@ -66,4 +66,8 @@ end
 post '/sms' do
   addOnDataSMS = params[:AddOns]
   puts addOnDataSMS
+  client = Twilio::REST::Client.new(account_sid, auth_token)
+  Twilio::TwiML::Response.new do |r|
+      r.Sms 'You\'re doing it Peter!'
+    end.text
 end
