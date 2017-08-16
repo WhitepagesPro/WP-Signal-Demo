@@ -16,48 +16,49 @@ api_secret  = ENV['twilio_api_secret']
 sync_sid    = ENV['twilio_sync_service_sid']
 
 get '/' do
-		client_name = params[:client]
-		if client_name.nil?
-				client_name = default_client
-		end
-		capability = Twilio::Util::Capability.new account_sid, auth_token
-		# Create an application sid at twilio.com/user/account/apps and use it here/above
-		capability.allow_client_outgoing appsid
-		capability.allow_client_incoming client_name
-		token = capability.generate
-		erb :index, :locals => {:token => token, :client_name => client_name, :caller_id=> caller_id}
+    client_name = params[:client]
+    if client_name.nil?
+        client_name = default_client
+    end
+    capability = Twilio::Util::Capability.new account_sid, auth_token
+    # Create an application sid at twilio.com/user/account/apps and use it here/above
+    capability.allow_client_outgoing appsid
+    capability.allow_client_incoming client_name
+    token = capability.generate
+    erb :index, :locals => {:token => token, :client_name => client_name, :caller_id=> caller_id}
 end
 # Generate a token for use in our app
 get '/token' do
-	# Get the user-provided ID for the connecting device
-	device_id = params['device']
-	# Create a random username for the client
-	identity = 'twilioTest'
-	# Create a unique ID for the currently connecting device
-	endpoint_id = "TwilioDemoApp:#{identity}:#{device_id}"
-	# Create an Access Token for the app
-	token = Twilio::Util::AccessToken.new account_sid, api_key, api_secret, 3600, identity
-	token.identity = identity
-	# Create app grant for out token
-	grant = Twilio::Util::AccessToken::SyncGrant.new
-	grant.service_sid = sync_sid
-	grant.endpoint_id = endpoint_id
-	token.add_grant grant
-	# Generate the token and send to the client
-	json :identity => identity, :token => token.to_jwt
+  # Get the user-provided ID for the connecting device
+  device_id = params['device']
+  # Create a random username for the client
+  identity = 'twilioTest'
+  # Create a unique ID for the currently connecting device
+  endpoint_id = "TwilioDemoApp:#{identity}:#{device_id}"
+  # Create an Access Token for the app
+  token = Twilio::Util::AccessToken.new account_sid, api_key, api_secret, 3600, identity
+  token.identity = identity
+  # Create app grant for out token
+  grant = Twilio::Util::AccessToken::SyncGrant.new
+  grant.service_sid = sync_sid
+  grant.endpoint_id = endpoint_id
+  token.add_grant grant
+  # Generate the token and send to the client
+  json :identity => identity, :token => token.to_jwt
 end
 #this will be called from a Twilio voice URL
 #for inbound calls, dial the default_client
 post '/inbound' do
-	addOnData = params[:AddOns]
-	client = Twilio::REST::Client.new(account_sid, auth_token)
-	# Sending the add on data through Twilio Sync
-	service = client.preview.sync.services(sync_sid)
-	service.documents("TwilioChannel").update(data: addOnData)
-	# Dials the default_client
-	Twilio::TwiML::Response.new do |r|
-	# Should be your Twilio Number or a verified Caller ID
-		r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
-		r.Sms 'Thank you for joining our session at Twilio SIGNAL! Sign up for your free data analysis here: http://bit.ly/wpsignal'
-	end.text
+  addOnData = params[:AddOns]
+  puts addOnData 
+  client = Twilio::REST::Client.new(account_sid, auth_token)
+  # Sending the add on data through Twilio Sync
+  service = client.preview.sync.services(sync_sid)
+  service.documents("TwilioChannel").update(data: addOnData)
+  # Dials the default_client
+  Twilio::TwiML::Response.new do |r|
+  # Should be your Twilio Number or a verified Caller ID
+    r.Say 'You will get a message shortly! White pages hopes you are enjoying the conference!', voice: 'alice'
+    r.Sms 'Thank you for joining our session at Twilio SIGNAL! Sign up for your free data analysis here: http://bit.ly/wpsignal'
+  end.text
 end
